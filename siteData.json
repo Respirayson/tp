@@ -136,18 +136,18 @@
       "headingKeywords": {}
     },
     {
-      "src": "team/Respirayson.md",
-      "title": "Rayson Yeap's Project Portfolio Page",
-      "headings": {
-        "project-fakejarvis": "Project: FAKEJARVIS"
-      },
-      "headingKeywords": {}
-    },
-    {
       "src": "team/johndoe.md",
       "title": "John Doe's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/respirayson.md",
+      "title": "Rayson Yeap's Project Portfolio Page",
+      "headings": {
+        "project-fakejarvis": "Project: FAKEJARVIS"
       },
       "headingKeywords": {}
     },
