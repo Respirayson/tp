@@ -11,7 +11,7 @@
         "jian-song": "Jian Song",
         "johnny-doe": "Johnny Doe",
         "jean-doe": "Jean Doe",
-        "james-doe": "James Doe"
+        "ho-jia-cheng": "Ho Jia Cheng"
       },
       "headingKeywords": {}
     },
@@ -158,6 +158,14 @@
       "title": "Rayson Yeap's Project Portfolio Page",
       "headings": {
         "project-fakejarvis": "Project: FAKEJARVIS"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/wesho1107.md",
+      "title": "Ho Jia Cheng's Project Portfolio Page",
+      "headings": {
+        "project-f-a-k-e-j-a-r-v-i-s": "Project: F.A.K.E.J.A.R.V.I.S."
       },
       "headingKeywords": {}
     },
