@@ -6,9 +6,9 @@
       "title": "About Us",
       "headings": {
         "about-us": "About Us",
-        "project-team": "Project team",
+        "project-fakejarvis-team": "Project FAKEJARVIS' Team",
         "yeap-rayson": "Yeap Rayson",
-        "jane-doe": "Jane Doe",
+        "jian-song": "Jian Song",
         "johnny-doe": "Johnny Doe",
         "jean-doe": "Jean Doe",
         "james-doe": "James Doe"
@@ -140,6 +140,16 @@
       "title": "John Doe's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/raydenlim.md",
+      "title": "Jian Song (rayden)'s Project Portfolio Page",
+      "headings": {
+        "name-rayden": "Name: Rayden",
+        "joke-of-the-day": "Joke of the day",
+        "project-fakejarvis": "Project: FAKEJARVIS"
       },
       "headingKeywords": {}
     },
