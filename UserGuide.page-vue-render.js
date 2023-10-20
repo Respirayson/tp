@@ -227,49 +227,49 @@ with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inl
 with(this){return _c('h3',{attrs:{"id":"adding-a-grade-to-an-assignment-addgrade"}},[_v("📝Adding a grade to an assignment: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("addgrade")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#adding-a-grade-to-an-assignment-addgrade","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Format: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("addgrade n/STUDENT_NAME a/ASSIGNMENT g/GRADE")])])}
+with(this){return _c('p',[_v("Format: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("addgrade INDEX as/ASSIGNMENT g/GRADE")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("STUDENT_NAME The name of the student.")]),_v(" "),_c('li',[_v("ASSIGNMENT The name of the assignment.")]),_v(" "),_c('li',[_v("GRADE The grade of the student.")])])}
+with(this){return _c('ul',[_c('li',[_v("INDEX The index of the student.")]),_v(" "),_c('li',[_v("ASSIGNMENT The name of the assignment.")]),_v(" "),_c('li',[_v("GRADE The grade of the student.")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("addgrade n/Rayson a/Functional Expressionism g/1300")]),_v(" adds a grade of 1300 to Rayson’s Functional Expressionism assignment.")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("addgrade n/Wesley a/Rune Reading g/600")]),_v(" adds a grade of 600 to Wesley’s Rune Reading assignment.")])])}
+with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("addgrade 1 as/Functional Expressionism g/1300")]),_v(" adds a grade of 1300 to student 1's Functional Expressionism assignment.")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("addgrade 2 as/Rune Reading g/600")]),_v(" adds a grade of 600 to student 2's Rune Reading assignment.")])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"viewing-an-assignment-grade-viewgrade"}},[_v("👀Viewing an assignment grade: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("viewgrade")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#viewing-an-assignment-grade-viewgrade","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Format: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("viewgrade n/STUDENT_NAME a/ASSIGNMENT")])])}
+with(this){return _c('p',[_v("Format: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("viewgrade INDEX as/ASSIGNMENT")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("STUDENT_NAME The name of the student.")]),_v(" "),_c('li',[_v("ASSIGNMENT The name of the assignment.")])])}
+with(this){return _c('ul',[_c('li',[_v("INDEX The index of the student.")]),_v(" "),_c('li',[_v("ASSIGNMENT The name of the assignment.")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("viewgrade n/Rayson a/Functional Expressionism")]),_v(" shows Rayson’s Functional Expressionism grade.")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("viewgrade n/Wesley a/Rune Reading")]),_v(" shows Wesley’s Rune Reading grade.")])])}
+with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("viewgrade 1 as/Functional Expressionism")]),_v(" shows student 1's Functional Expressionism grade.")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("viewgrade 2 as/Rune Reading")]),_v(" shows student 2's Rune Reading grade.")])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"editing-an-assignment-grade-editgrade"}},[_v("🛠️Editing an assignment grade: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("editgrade")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#editing-an-assignment-grade-editgrade","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Format: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("editgrade n/STUDENT_NAME a/ASSIGNMENT g/GRADE")])])}
+with(this){return _c('p',[_v("Format: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("editgrade INDEX as/ASSIGNMENT g/GRADE")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("STUDENT_NAME The name of the student.")]),_v(" "),_c('li',[_v("ASSIGNMENT The name of the assignment.")]),_v(" "),_c('li',[_v("GRADE The score of the student.")])])}
+with(this){return _c('ul',[_c('li',[_v("INDEX The index of the student.")]),_v(" "),_c('li',[_v("ASSIGNMENT The name of the assignment.")]),_v(" "),_c('li',[_v("GRADE The score of the student.")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("editgrade n/Rayson a/Functional Expressionism g/1200")]),_v(" edits the grade of Rayson’s Functional Expressionism assignment to 1200.")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("editgrade n/Wesley a/Rune Reading g/1000")]),_v(" edits the grade of Wesley’s Rune Reading assignment to 1000.")])])}
+with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("editgrade 1 as/Functional Expressionism g/1200")]),_v(" edits the grade of student 1's Functional Expressionism assignment to 1200.")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("editgrade 2 as/Rune Reading g/1000")]),_v(" edits the grade of student 2's Rune Reading assignment to 1000.")])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"deleting-an-assignment-grade-deletegrade"}},[_v("❌Deleting an assignment grade: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("deletegrade")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#deleting-an-assignment-grade-deletegrade","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Format: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("deletegrade n/STUDENT_NAME a/ASSIGNMENT")])])}
+with(this){return _c('p',[_v("Format: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("deletegrade INDEX as/ASSIGNMENT")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("STUDENT_NAME The name of the student.")]),_v(" "),_c('li',[_v("ASSIGNMENT The name of the assignment.")])])}
+with(this){return _c('ul',[_c('li',[_v("INDEX The index of the student.")]),_v(" "),_c('li',[_v("ASSIGNMENT The name of the assignment.")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("deletegrade n/Rayson a/Functional Expressionism")]),_v(" deletes Rayson’s Functional Expressionism grade.")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("deletegrade n/Wesley a/Rune Reading")]),_v(" deletes Wesley’s Rune Reading grade.")])])}
+with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("deletegrade 1 as/Functional Expressionism")]),_v(" deletes student 1's Functional Expressionism grade.")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("deletegrade 2 as/Rune Reading")]),_v(" deletes student 2's Rune Reading grade.")])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"adding-a-comment-to-an-assignment-addcomment"}},[_v("📝Adding a comment to an assignment: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("addcomment")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#adding-a-comment-to-an-assignment-addcomment","onclick":"event.stopPropagation()"}})])}
@@ -407,6 +407,6 @@ with(this){return _c('h2',{attrs:{"id":"command-summary"}},[_v("Command summary"
 with(this){return _c('div',{staticClass:"table-responsive"},[_c('table',{staticClass:"markbind-table table table-bordered table-striped"},[_c('thead',[_c('tr',[_c('th',[_v("Action")]),_v(" "),_c('th',[_v("Format, Examples")])])]),_v(" "),_c('tbody',[_c('tr',[_c('td',[_c('strong',[_v("Add")])]),_v(" "),_c('td',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​")]),_v(" "),_c('br'),_v(" e.g., "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague")])])]),_v(" "),_c('tr',[_c('td',[_c('strong',[_v("Clear")])]),_v(" "),_c('td',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("clear")])])]),_v(" "),_c('tr',[_c('td',[_c('strong',[_v("Delete")])]),_v(" "),_c('td',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete INDEX")]),_c('br'),_v(" e.g., "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete 3")])])]),_v(" "),_c('tr',[_c('td',[_c('strong',[_v("Edit")])]),_v(" "),_c('td',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​")]),_c('br'),_v(" e.g.,"),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit 2 n/James Lee e/jameslee@example.com")])])]),_v(" "),_c('tr',[_c('td',[_c('strong',[_v("Find")])]),_v(" "),_c('td',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find KEYWORD [MORE_KEYWORDS]")]),_c('br'),_v(" e.g., "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find James Jake")])])]),_v(" "),_c('tr',[_c('td',[_c('strong',[_v("List")])]),_v(" "),_c('td',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("list")])])]),_v(" "),_c('tr',[_c('td',[_c('strong',[_v("Help")])]),_v(" "),_c('td',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("help")])])])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Thu, 19 Oct 2023, 21:17:07 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Fri, 20 Oct 2023, 14:20:16 GMT+8]")])])])}
 }];
   
