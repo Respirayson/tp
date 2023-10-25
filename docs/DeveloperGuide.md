@@ -157,6 +157,34 @@ Classes used by multiple components are in the `seedu.addressbook.commons` packa
 
 This section describes some noteworthy details on how certain features are implemented.
 
+### Tasks
+The Task component consists of the following set of features: Add Task, Delete Task and Update Progress.
+
+#### The Task class
+The Task Class is made up of a `TaskName`, `TaskDescription`, `date`, `TaskPriority`, `TaskProgress`, and a set of getter methods that corresponds to these fields.
+
+Below is a class diagram describing the implementation of `Task` and its respective fields.
+
+![Task Class UML](images/TaskClass UML.png)
+
+#### Design Considerations:
+**Aspect: How the status of a task is implemented:**
+
+**Alternative 1 (current choice):** `TaskProgress` Enum for Task Progress. Progress includes `not_started`, `pending`, `done`.
+- Pros: This choice offers flexibility in representing task progress.
+- Cons: It requires additional checks to validate user input and extensive unit testing.
+
+**Alternative 2:** `isDone` Boolean for Task Completion.
+- Cons: Only allows for a binary state, i.e., either the task is done or not.
+
+### Commands
+This section explains the general implementation of all commands.
+
+Below is the sequence diagram for the execution of these commands (denoted by `XYZCommand`) after user input is sent to `LogicManager`. The execution of each of the command has been omitted due to their inherent differences and will be covered in their respective command sections below.
+
+![Command Parser Sequence Diagram](images/CommandParserSequenceDiagram.png)
+
+
 ### \[Proposed\] Undo/redo feature
 
 #### Proposed Implementation
@@ -297,16 +325,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `FAKEJARVIS` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `F.A.K.E.J.A.R.V.I.S.` and the **Actor** is the `user`, unless specified otherwise)
 
 **Use case: Delete a person**
 
 **MSS**
 
 1.  User requests to list persons
-2.  FAKEJARVIS shows a list of persons
+2.  F.A.K.E.J.A.R.V.I.S. shows a list of persons
 3.  User requests to delete a specific person in the list
-4.  FAKEJARVIS deletes the person
+4.  F.A.K.E.J.A.R.V.I.S. deletes the person
 
     Use case ends.
 
@@ -318,7 +346,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3a1. FAKEJARVIS shows an error message.
+    * 3a1. F.A.K.E.J.A.R.V.I.S. shows an error message.
 
       Use case resumes at step 2.
 
@@ -328,9 +356,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list persons
-2.  FAKEJARVIS shows a list of persons
+2.  F.A.K.E.J.A.R.V.I.S. shows a list of persons
 3.  User requests to delete a specific person in the list
-4.  FAKEJARVIS deletes the person
+4.  F.A.K.E.J.A.R.V.I.S. deletes the person
 
     Use case ends.
 
@@ -342,7 +370,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3a1. FAKEJARVIS shows an error message.
+    * 3a1. F.A.K.E.J.A.R.V.I.S. shows an error message.
 
       Use case resumes at step 2.
 
@@ -352,9 +380,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list persons
-2.  FAKEJARVIS shows a list of persons
+2.  F.A.K.E.J.A.R.V.I.S. shows a list of persons
 3.  User requests to grade an assignment for a specific person in the list
-4.  FAKEJARVIS assigns given grade to the student
+4.  F.A.K.E.J.A.R.V.I.S. assigns given grade to the student
 
     Use case ends.
 
@@ -366,7 +394,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. The given index is invalid.
 
-    * 3a1. FAKEJARVIS shows an error message.
+    * 3a1. F.A.K.E.J.A.R.V.I.S. shows an error message.
 
       Use case resumes at step 2.
 
@@ -375,9 +403,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list persons
-2.  FAKEJARVIS shows a list of persons
+2.  F.A.K.E.J.A.R.V.I.S. shows a list of persons
 3.  User request a search query to find a student's profile
-4.  FAKEJARVIS returns matching results from the database
+4.  F.A.K.E.J.A.R.V.I.S. returns matching results from the database
 
     Use case ends.
 
@@ -389,7 +417,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. No matching profiles.
 
-    * 3a1. FAKEJARVIS shows an error message.
+    * 3a1. F.A.K.E.J.A.R.V.I.S. shows an error message.
 
         Use case resumes at step 2.
 
@@ -398,9 +426,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **MSS**
 
 1.  User requests to list persons.
-2.  FAKEJARVIS shows a list of persons.
+2.  F.A.K.E.J.A.R.V.I.S. shows a list of persons.
 3.  User requests to apply filters to the results via attribute `FILTER_ATTRIBUTE`, or description `FILTER_DESCRIPTION`.
-4.  FAKEJARVIS shows the filter results.
+4.  F.A.K.E.J.A.R.V.I.S. shows the filter results.
 
     Use case ends.
 
@@ -412,7 +440,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 * 3a. No filtered results.
 
-    * 3a1. FAKEJARVIS shows an error message.
+    * 3a1. F.A.K.E.J.A.R.V.I.S. shows an error message.
 
       Use case resumes at step 2.
 

@@ -1,0 +1,67 @@
+@startuml
+!include style.puml
+
+box Logic LOGIC_COLOR_T1
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":XYZCommandParser" as XYZCommandParser LOGIC_COLOR
+participant "c:XYZCommand" as XYZCommand LOGIC_COLOR
+participant "result:CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+end box
+
+[-> LogicManager : execute("xyz  ...")
+activate LogicManager
+
+LogicManager -> AddressBookParser : parseCommand("xyz  ...")
+activate AddressBookParser
+
+create XYZCommandParser
+AddressBookParser -> XYZCommandParser
+activate XYZCommandParser
+
+XYZCommandParser --> AddressBookParser
+deactivate XYZCommandParser
+
+AddressBookParser -> XYZCommandParser : parse("...")
+activate XYZCommandParser
+
+create XYZCommand
+XYZCommandParser -> XYZCommand
+activate XYZCommand
+
+XYZCommand --> XYZCommandParser
+deactivate XYZCommand
+
+XYZCommandParser --> AddressBookParser : c
+deactivate XYZCommandParser
+
+'Hidden arrow to position the destroy marker below the end of the activation bar.
+XYZCommandParser -[hidden]-> AddressBookParser
+destroy XYZCommandParser
+
+AddressBookParser --> LogicManager : c
+deactivate AddressBookParser
+
+LogicManager -> XYZCommand : execute()
+
+activate XYZCommand
+ref over XYZCommand, Model : XYZCommandExecute
+
+create CommandResult
+XYZCommand -> CommandResult
+activate CommandResult
+
+CommandResult --> XYZCommand
+deactivate CommandResult
+
+XYZCommand --> LogicManager : result
+deactivate XYZCommand
+
+[<-- LogicManager
+deactivate LogicManager
+
+@enduml

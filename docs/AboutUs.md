@@ -9,7 +9,7 @@ We are a team based in the [School of Computing, National University of Singapor
 
 You can reach us at the email `seer[at]comp.nus.edu.sg`
 
-## Project FAKEJARVIS' Team
+## Project F.A.K.E.J.A.R.V.I.S.' Team
 <img src="images/fakejarvis.png" width="200px">
 
 ### Yeap Rayson
