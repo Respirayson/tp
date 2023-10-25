@@ -6,7 +6,7 @@
       "title": "About Us",
       "headings": {
         "about-us": "About Us",
-        "project-fakejarvis-team": "Project FAKEJARVIS' Team",
+        "project-f-a-k-e-j-a-r-v-i-s-team": "Project F.A.K.E.J.A.R.V.I.S.' Team",
         "yeap-rayson": "Yeap Rayson",
         "jian-song": "Jian Song",
         "ding-han": "Ding Han",
@@ -51,6 +51,8 @@
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
+        "tasks": "Tasks",
+        "commands": "Commands",
         "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
         "proposed-data-archiving": "[Proposed] Data archiving",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
@@ -154,7 +156,7 @@
       "src": "index.md",
       "title": "",
       "headings": {
-        "addressbook-level-3": "AddressBook Level-3"
+        "f-a-k-e-j-a-r-v-i-s": "F.A.K.E.J.A.R.V.I.S."
       },
       "headingKeywords": {}
     },
