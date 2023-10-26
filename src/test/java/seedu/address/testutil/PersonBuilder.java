@@ -61,6 +61,19 @@ public class PersonBuilder {
     }
 
     /**
+     * Initializes the PersonBuilder with the data of {@code personToCopy} but with a new AssignmentMap.
+     */
+    public PersonBuilder(Person personToCopy, AssignmentMap newAssignments) {
+        name = personToCopy.getName();
+        phone = personToCopy.getPhone();
+        email = personToCopy.getEmail();
+        address = personToCopy.getAddress();
+        tags = new HashSet<>(personToCopy.getTags());
+        assignments = newAssignments;
+        gradedTests = new HashSet<>(personToCopy.getGradedTest());
+    }
+
+    /**
      * Sets the {@code Name} of the {@code Person} that we are building.
      */
     public PersonBuilder withName(String name) {
@@ -111,7 +124,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, phone, email, address, tags, gradedTests);
+        return new Person(name, phone, email, address, tags, assignments, gradedTests);
     }
 
 }

@@ -11,19 +11,23 @@ public class AssignmentInitialise {
     private static AssignmentNameInitialise nameInitialise;
     private static AssignmentMaxGradeInitialise maxGradeInitialise;
 
+    private AssignmentInitialise() {} // prevents instantiation
+
     /**
      * Initializes all assignment names and maximum grades if they have yet to be initialized.
      */
     public static void init() {
-        AssignmentInitialise.nameInitialise = new AssignmentNameInitialise();
-        AssignmentInitialise.nameInitialise.initMissions();
-        AssignmentInitialise.nameInitialise.initQuests();
+        if (!isInitialised) {
+            AssignmentInitialise.nameInitialise = new AssignmentNameInitialise();
+            AssignmentInitialise.nameInitialise.initMissions();
+            AssignmentInitialise.nameInitialise.initQuests();
 
-        AssignmentInitialise.maxGradeInitialise = new AssignmentMaxGradeInitialise();
-        AssignmentInitialise.maxGradeInitialise.missionGrades();
-        AssignmentInitialise.maxGradeInitialise.questGrades();
+            AssignmentInitialise.maxGradeInitialise = new AssignmentMaxGradeInitialise();
+            AssignmentInitialise.maxGradeInitialise.missionGrades();
+            AssignmentInitialise.maxGradeInitialise.questGrades();
 
-        isInitialised = true;
+            isInitialised = true;
+        }
     }
 
     public static AssignmentName getAssignmentName(int index) {

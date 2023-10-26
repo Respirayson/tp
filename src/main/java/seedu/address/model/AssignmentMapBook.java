@@ -54,4 +54,18 @@ public class AssignmentMapBook implements ReadOnlyAssignmentMap {
     public ObservableMap<AssignmentName, Assignment> getAssignmentMap() {
         return assignments.asUnmodifiableObservableMap();
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+
+        if (!(other instanceof AssignmentMapBook)) {
+            return false;
+        }
+
+        AssignmentMapBook otherMap = (AssignmentMapBook) other;
+        return this.assignments.equals(otherMap.assignments);
+    }
 }

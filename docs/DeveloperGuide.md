@@ -444,6 +444,35 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
+**Use case: Create a consultation**
+
+**MSS**
+
+1.  User requests to create a consultation with specified date, time and student name(s)
+2.  F.A.K.E.J.A.R.V.I.S. creates a consultation.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. The date input is invalid.
+
+    * 2a1. F.A.K.E.J.A.R.V.I.S. shows an error message.
+
+      Use case ends.
+
+* 3a. The time input is invalid.
+
+    * 3a1. F.A.K.E.J.A.R.V.I.S. shows an error message.
+
+      Use case ends.
+
+* 3a. No matching name to students' names.
+
+    * 3a1. F.A.K.E.J.A.R.V.I.S. shows an error message.
+
+      Use case ends.
+
 *{More to be added}*
 
 ### Non-Functional Requirements

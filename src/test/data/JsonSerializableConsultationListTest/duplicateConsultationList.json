@@ -12,95 +12,118 @@
         "assignments" : {
           "Beyond the First Dimension" : {
             "assignmentName" : "Beyond the First Dimension",
-            "grade" : "UNGRADED/800"
+            "grade" : "UNGRADED/800",
+            "comment" : ""
           },
           "Colorful Carpets" : {
             "assignmentName" : "Colorful Carpets",
-            "grade" : "UNGRADED/600"
+            "grade" : "UNGRADED/600",
+            "comment" : ""
           },
           "Premorseal Communications" : {
             "assignmentName" : "Premorseal Communications",
-            "grade" : "UNGRADED/950"
+            "grade" : "UNGRADED/950",
+            "comment" : ""
           },
           "The Magical Tone Matrix" : {
             "assignmentName" : "The Magical Tone Matrix",
-            "grade" : "UNGRADED/800"
+            "grade" : "UNGRADED/800",
+            "comment" : ""
           },
           "Beyond the Second Dimension" : {
             "assignmentName" : "Beyond the Second Dimension",
-            "grade" : "UNGRADED/800"
+            "grade" : "UNGRADED/800",
+            "comment" : ""
           },
           "Finding ELDRIC" : {
             "assignmentName" : "Finding ELDRIC",
-            "grade" : "UNGRADED/1200"
+            "grade" : "UNGRADED/1200",
+            "comment" : ""
           },
           "Rune Trials" : {
             "assignmentName" : "Rune Trials",
-            "grade" : "UNGRADED/600"
+            "grade" : "UNGRADED/600",
+            "comment" : ""
           },
           "Runic Carpets" : {
             "assignmentName" : "Runic Carpets",
-            "grade" : "UNGRADED/400"
+            "grade" : "UNGRADED/400",
+            "comment" : ""
           },
           "Search and Rescue" : {
             "assignmentName" : "Search and Rescue",
-            "grade" : "UNGRADED/720"
+            "grade" : "UNGRADED/720",
+            "comment" : ""
           },
           "Musical Diversions" : {
             "assignmentName" : "Musical Diversions",
-            "grade" : "UNGRADED/1300"
+            "grade" : "UNGRADED/1300",
+            "comment" : ""
           },
           "Functional Expressionism" : {
             "assignmentName" : "Functional Expressionism",
-            "grade" : "UNGRADED/500"
+            "grade" : "UNGRADED/500",
+            "comment" : ""
           },
           "Know Your Environment" : {
             "assignmentName" : "Know Your Environment",
-            "grade" : "UNGRADED/1200"
+            "grade" : "UNGRADED/1200",
+            "comment" : ""
           },
           "Sorting Things Out" : {
             "assignmentName" : "Sorting Things Out",
-            "grade" : "UNGRADED/950"
+            "grade" : "UNGRADED/950",
+            "comment" : ""
           },
           "Grading a Sort" : {
             "assignmentName" : "Grading a Sort",
-            "grade" : "UNGRADED/750"
+            "grade" : "UNGRADED/750",
+            "comment" : ""
           },
           "Robotic Trials" : {
             "assignmentName" : "Robotic Trials",
-            "grade" : "UNGRADED/800"
+            "grade" : "UNGRADED/800",
+            "comment" : ""
           },
           "Curve Introduction" : {
             "assignmentName" : "Curve Introduction",
-            "grade" : "UNGRADED/700"
+            "grade" : "UNGRADED/700",
+            "comment" : ""
           },
           "Moving about on Planet Y" : {
             "assignmentName" : "Moving about on Planet Y",
-            "grade" : "UNGRADED/1000"
+            "grade" : "UNGRADED/1000",
+            "comment" : ""
           },
           "Curvaceous Wizardry" : {
             "assignmentName" : "Curvaceous Wizardry",
-            "grade" : "UNGRADED/600"
+            "grade" : "UNGRADED/600",
+            "comment" : ""
           },
           "POTS and Pans" : {
             "assignmentName" : "POTS and Pans",
-            "grade" : "UNGRADED/1200"
+            "grade" : "UNGRADED/1200",
+            "comment" : ""
           },
           "Rune Reading" : {
             "assignmentName" : "Rune Reading",
-            "grade" : "UNGRADED/1000"
+            "grade" : "UNGRADED/1000",
+            "comment" : ""
           },
           "Cardioid Arrest" : {
             "assignmentName" : "Cardioid Arrest",
-            "grade" : "UNGRADED/500"
+            "grade" : "UNGRADED/500",
+            "comment" : ""
           },
           "Curve Manipulation" : {
             "assignmentName" : "Curve Manipulation",
-            "grade" : "UNGRADED/600"
+            "grade" : "UNGRADED/600",
+            "comment" : ""
           },
           "Echoes of the Past" : {
             "assignmentName" : "Echoes of the Past",
-            "grade" : "UNGRADED/670"
+            "grade" : "UNGRADED/670",
+            "comment" : ""
           }
         }
       }
@@ -118,95 +141,118 @@
         "assignments" : {
           "Beyond the First Dimension" : {
             "assignmentName" : "Beyond the First Dimension",
-            "grade" : "UNGRADED/800"
+            "grade" : "UNGRADED/800",
+            "comment" : ""
           },
           "Colorful Carpets" : {
             "assignmentName" : "Colorful Carpets",
-            "grade" : "UNGRADED/600"
+            "grade" : "UNGRADED/600",
+            "comment" : ""
           },
           "Premorseal Communications" : {
             "assignmentName" : "Premorseal Communications",
-            "grade" : "UNGRADED/950"
+            "grade" : "UNGRADED/950",
+            "comment" : ""
           },
           "The Magical Tone Matrix" : {
             "assignmentName" : "The Magical Tone Matrix",
-            "grade" : "UNGRADED/800"
+            "grade" : "UNGRADED/800",
+            "comment" : ""
           },
           "Beyond the Second Dimension" : {
             "assignmentName" : "Beyond the Second Dimension",
-            "grade" : "UNGRADED/800"
+            "grade" : "UNGRADED/800",
+            "comment" : ""
           },
           "Finding ELDRIC" : {
             "assignmentName" : "Finding ELDRIC",
-            "grade" : "UNGRADED/1200"
+            "grade" : "UNGRADED/1200",
+            "comment" : ""
           },
           "Rune Trials" : {
             "assignmentName" : "Rune Trials",
-            "grade" : "UNGRADED/600"
+            "grade" : "UNGRADED/600",
+            "comment" : ""
           },
           "Runic Carpets" : {
             "assignmentName" : "Runic Carpets",
-            "grade" : "UNGRADED/400"
+            "grade" : "UNGRADED/400",
+            "comment" : ""
           },
           "Search and Rescue" : {
             "assignmentName" : "Search and Rescue",
-            "grade" : "UNGRADED/720"
+            "grade" : "UNGRADED/720",
+            "comment" : ""
           },
           "Musical Diversions" : {
             "assignmentName" : "Musical Diversions",
-            "grade" : "UNGRADED/1300"
+            "grade" : "UNGRADED/1300",
+            "comment" : ""
           },
           "Functional Expressionism" : {
             "assignmentName" : "Functional Expressionism",
-            "grade" : "UNGRADED/500"
+            "grade" : "UNGRADED/500",
+            "comment" : ""
           },
           "Know Your Environment" : {
             "assignmentName" : "Know Your Environment",
-            "grade" : "UNGRADED/1200"
+            "grade" : "UNGRADED/1200",
+            "comment" : ""
           },
           "Sorting Things Out" : {
             "assignmentName" : "Sorting Things Out",
-            "grade" : "UNGRADED/950"
+            "grade" : "UNGRADED/950",
+            "comment" : ""
           },
           "Grading a Sort" : {
             "assignmentName" : "Grading a Sort",
-            "grade" : "UNGRADED/750"
+            "grade" : "UNGRADED/750",
+            "comment" : ""
           },
           "Robotic Trials" : {
             "assignmentName" : "Robotic Trials",
-            "grade" : "UNGRADED/800"
+            "grade" : "UNGRADED/800",
+            "comment" : ""
           },
           "Curve Introduction" : {
             "assignmentName" : "Curve Introduction",
-            "grade" : "UNGRADED/700"
+            "grade" : "UNGRADED/700",
+            "comment" : ""
           },
           "Moving about on Planet Y" : {
             "assignmentName" : "Moving about on Planet Y",
-            "grade" : "UNGRADED/1000"
+            "grade" : "UNGRADED/1000",
+            "comment" : ""
           },
           "Curvaceous Wizardry" : {
             "assignmentName" : "Curvaceous Wizardry",
-            "grade" : "UNGRADED/600"
+            "grade" : "UNGRADED/600",
+            "comment" : ""
           },
           "POTS and Pans" : {
             "assignmentName" : "POTS and Pans",
-            "grade" : "UNGRADED/1200"
+            "grade" : "UNGRADED/1200",
+            "comment" : ""
           },
           "Rune Reading" : {
             "assignmentName" : "Rune Reading",
-            "grade" : "UNGRADED/1000"
+            "grade" : "UNGRADED/1000",
+            "comment" : ""
           },
           "Cardioid Arrest" : {
             "assignmentName" : "Cardioid Arrest",
-            "grade" : "UNGRADED/500"
+            "grade" : "UNGRADED/500",
+            "comment" : ""
           },
           "Curve Manipulation" : {
             "assignmentName" : "Curve Manipulation",
-            "grade" : "UNGRADED/600"
+            "grade" : "UNGRADED/600",
+            "comment" : ""
           },
           "Echoes of the Past" : {
             "assignmentName" : "Echoes of the Past",
-            "grade" : "UNGRADED/670"
+            "grade" : "UNGRADED/670",
+            "comment" : ""
           }
         }
       }

@@ -18,6 +18,7 @@ public class CliSyntax {
     public static final Prefix PREFIX_PRACTICAL_EXAM = new Prefix("gt/pe/");
     public static final Prefix PREFIX_ASSIGNMENT = new Prefix("as/");
     public static final Prefix PREFIX_GRADE = new Prefix("g/");
+    public static final Prefix PREFIX_COMMENT = new Prefix("c/");
     public static final Prefix PREFIX_DATE = new Prefix("d/");
     public static final Prefix PREFIX_TIME = new Prefix("tt/");
     public static final Prefix PREFIX_SESSION = new Prefix("s/");

@@ -23,6 +23,8 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.person.assignment.AssignmentName;
+import seedu.address.model.person.assignment.Comment;
+import seedu.address.model.person.assignment.Grade;
 import seedu.address.model.session.SessionNumber;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.task.TaskDescription;
@@ -388,5 +390,33 @@ public class ParserUtil {
             throw new ParseException(AssignmentName.MESSAGE_CONSTRAINTS);
         }
         return new AssignmentName(trimmedName);
+    }
+
+    /**
+     * Parses a {@code String grade} into a {@code Grade}.
+     *
+     * @throws ParseException if the given {@code grade} is invalid.
+     */
+    public static Grade parseGrade(String grade, String maxGrade) throws ParseException {
+        requireNonNull(grade);
+        String trimmedGrade = grade.trim();
+        if (!Grade.isValidGrade(trimmedGrade, maxGrade)) {
+            throw new ParseException(Grade.MESSAGE_CONSTRAINTS);
+        }
+        return new Grade(grade, maxGrade);
+    }
+
+    /**
+     * Parses a {@code String comment} into a {@code Comment}.
+     *
+     * @throws ParseException if the given {@code comment} is invalid.
+     */
+    public static Comment parseComment(String comment) throws ParseException {
+        requireNonNull(comment);
+        String trimmedComment = comment.trim();
+        if (!Comment.isValidComment(trimmedComment)) {
+            throw new ParseException(Comment.MESSAGE_CONSTRAINTS);
+        }
+        return new Comment(trimmedComment);
     }
 }

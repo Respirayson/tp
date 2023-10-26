@@ -5,6 +5,12 @@ package seedu.address.model.person.assignment;
  * Consists of the maximum grade as well as the actual grade.
  */
 public class Grade {
+
+    public static final String MESSAGE_CONSTRAINTS =
+            "Grade must be a positive integer, less than or equal to (max grade + 75) and without leading 0's";
+
+    public static final String VALIDATION_REGEX = "[0-9]+";
+
     private String actualGrade;
     private final String maxGrade;
     private boolean isGraded;
@@ -35,6 +41,10 @@ public class Grade {
         return this.maxGrade;
     }
 
+    public boolean getIsGraded() {
+        return this.isGraded;
+    }
+
     /**
      * Creates a new copy of the Grade of an assignment.
      *
@@ -45,6 +55,49 @@ public class Grade {
             return new Grade(this.actualGrade, this.maxGrade);
         } else {
             return new Grade(this.maxGrade);
+        }
+    }
+
+    public Grade ungrade() {
+        return new Grade(maxGrade);
+    }
+
+    /**
+     * Checks if the grade being added is valid.
+     *
+     * @param test Grade to be added.
+     * @param maxGrade Maximum Grade.
+     * @return Whether the grade being added is valid.
+     */
+    public static boolean isValidGrade(String test, String maxGrade) {
+        int testInteger;
+        int maxInteger;
+
+        if (!test.matches(VALIDATION_REGEX)) {
+            return false;
+        }
+        if (test.charAt(0) == '0' && test.length() > 1) {
+            return false;
+        }
+
+        testInteger = Integer.parseInt(test);
+        maxInteger = Integer.parseInt(maxGrade) + 75;
+
+        return testInteger <= maxInteger;
+    }
+
+    /**
+     * Checks if the grade is valid, including UNGRADED.
+     *
+     * @param test Grade to be added.
+     * @param maxGrade Maximum Grade.
+     * @return Whether the grade is valid.
+     */
+    public static boolean isValidIncludingUngraded(String test, String maxGrade) {
+        if (test.equals("UNGRADED")) {
+            return true;
+        } else {
+            return isValidGrade(test, maxGrade);
         }
     }
 
@@ -70,9 +123,9 @@ public class Grade {
 
         Grade otherGrade = (Grade) other;
         boolean sameMaxGrade = this.maxGrade.equals(otherGrade.maxGrade);
-        if (this.isGraded && otherGrade.isGraded) {
+        if (this.isGraded) {
             boolean sameGrade = this.actualGrade.equals(otherGrade.actualGrade);
-            return sameMaxGrade && sameGrade;
+            return sameMaxGrade && sameGrade && otherGrade.isGraded;
         } else {
             return sameMaxGrade && !otherGrade.isGraded;
         }

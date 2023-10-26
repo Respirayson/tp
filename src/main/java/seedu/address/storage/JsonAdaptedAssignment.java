@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.assignment.Assignment;
 import seedu.address.model.person.assignment.AssignmentName;
+import seedu.address.model.person.assignment.Comment;
 import seedu.address.model.person.assignment.Grade;
-import seedu.address.model.task.TaskDescription;
 
 /**
  * Jackson-friendly version of {@link Assignment}.
@@ -18,23 +18,35 @@ public class JsonAdaptedAssignment {
 
     private final String assignmentName;
     private final String grade;
+    private final String comment;
 
     /**
      * Constructs a {@code JsonAdaptedAssignment} with the given person details.
      */
     @JsonCreator
     public JsonAdaptedAssignment(@JsonProperty("assignmentName") String assignmentName,
-        @JsonProperty("grade") String grade) {
+        @JsonProperty("grade") String grade, @JsonProperty("comment") String comment) {
         this.assignmentName = assignmentName;
         this.grade = grade;
+        this.comment = comment;
+    }
+
+    /**
+     * Constructs a {@code JsonAdaptedAssignment} with the given person details without a comment.
+     */
+    public JsonAdaptedAssignment(String assignmentName, String grade) {
+        this.assignmentName = assignmentName;
+        this.grade = grade;
+        this.comment = "";
     }
 
     /**
      * Converts a given {@code Assignment} into this class for Jackson use.
      */
     public JsonAdaptedAssignment(Assignment source) {
-        assignmentName = source.name();
-        grade = source.gradeToString();
+        assignmentName = source.getName().toString();
+        grade = source.getGrade().toString();
+        comment = source.getComment().toString();
     }
 
     /**
@@ -45,16 +57,23 @@ public class JsonAdaptedAssignment {
     public Assignment toModelType() throws IllegalValueException {
         if (assignmentName == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
-                    AssignmentName.class.getSimpleName()));
+                AssignmentName.class.getSimpleName()));
+        } else if (!AssignmentName.isValidName(assignmentName)) {
+            throw new IllegalValueException(String.format(AssignmentName.MESSAGE_CONSTRAINTS,
+                AssignmentName.class.getSimpleName()));
         }
 
         final AssignmentName modelName = new AssignmentName(assignmentName);
 
         if (grade == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
-                    TaskDescription.class.getSimpleName()));
+                Grade.class.getSimpleName()));
         }
-        // Add valid grade checker later
+        String[] gradeArray = grade.split("/");
+        if (!Grade.isValidIncludingUngraded(gradeArray[0], gradeArray[1])) {
+            throw new IllegalValueException(String.format(Grade.MESSAGE_CONSTRAINTS,
+                Grade.class.getSimpleName()));
+        }
 
         final Grade modelGrade;
         if (grade.startsWith("UNGRADED/")) {
@@ -66,6 +85,17 @@ public class JsonAdaptedAssignment {
             String maxGradeString = arrOfGradeStrings[1];
             modelGrade = new Grade(actualGradeString, maxGradeString);
         }
-        return new Assignment(modelName, modelGrade);
+
+        final Comment modelComment;
+        if (comment.equals("")) {
+            modelComment = new Comment();
+        } else if (!Comment.isValidComment(comment)) {
+            throw new IllegalValueException(String.format(Comment.MESSAGE_CONSTRAINTS,
+                Comment.class.getSimpleName()));
+        } else {
+            modelComment = new Comment(comment);
+        }
+
+        return new Assignment(modelName, modelGrade, modelComment);
     }
 }

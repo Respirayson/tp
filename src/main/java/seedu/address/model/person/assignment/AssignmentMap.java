@@ -60,6 +60,29 @@ public class AssignmentMap {
         return updateTo;
     }
 
+    /**
+     * Creates a new AssignmentMap with the updated comment being given to an assignment.
+     *
+     * @param toBeCommented Name of assignment being graded.
+     * @param newComment Grade being given to the assignment.
+     * @return New AssignmentMap with the updated grades.
+     */
+    public AssignmentMap createUpdatedMap(AssignmentName toBeCommented, Comment newComment) {
+        AssignmentMap updateTo = new AssignmentMap();
+        for (int i = 0; i < AssignmentInitialise.size(); i++) {
+            AssignmentName assignmentName = AssignmentInitialise.getAssignmentName(i);
+            if (assignmentName.equals(toBeCommented)) {
+                Grade grade = assignments.get(assignmentName).getGrade();
+                Assignment commentedAssignment = new Assignment(toBeCommented, grade, newComment);
+                updateTo.assignments.replace(assignmentName, commentedAssignment);
+            } else {
+                Assignment originalAssignment = this.assignments.get(assignmentName);
+                updateTo.assignments.replace(assignmentName, originalAssignment.copyAssignment());
+            }
+        }
+        return updateTo;
+    }
+
     public boolean contains(AssignmentName key) {
         return assignments.containsKey(key);
     }

@@ -2,7 +2,7 @@ package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.address.logic.commands.CommandTestUtil.TASK_PROGRESS_TASK1;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_PROGRESS;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PROGRESS_PENDING;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_TASK;
@@ -26,7 +26,7 @@ public class UpdateTaskProgressCommandParserTest {
         Index targetIndex = INDEX_FIRST_TASK;
         String userInput = targetIndex.getOneBased() + TASK_PROGRESS_TASK1;
         EditProgressDescriptor descriptor =
-                new EditProgressDescriptorBuilder().withProgress(VALID_PROGRESS).build();
+                new EditProgressDescriptorBuilder().withProgress(VALID_PROGRESS_PENDING).build();
         UpdateTaskProgressCommand expectedCommand = new UpdateTaskProgressCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
     }

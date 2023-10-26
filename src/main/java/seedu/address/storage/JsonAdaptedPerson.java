@@ -162,6 +162,9 @@ class JsonAdaptedPerson {
         HashMap<AssignmentName, Assignment> actualMap = new HashMap<>();
         for (int i = 0; i < AssignmentInitialise.size(); i++) {
             AssignmentName assignmentName = AssignmentInitialise.getAssignmentName(i);
+            if (!jsonMap.containsKey(assignmentName.toString())) {
+                throw new IllegalValueException(AssignmentName.MESSAGE_CONSTRAINTS);
+            }
             Assignment assignment = jsonMap.get(assignmentName.toString()).toModelType();
             actualMap.put(assignmentName, assignment);
         }

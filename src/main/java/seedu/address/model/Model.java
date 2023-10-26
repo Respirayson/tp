@@ -235,6 +235,12 @@ public interface Model {
      */
     void addConsultation(Consultation consultation);
 
+    /**
+     * Deletes the given consultation.
+     * The consultation must exist in the consultation list.
+     */
+    void deleteConsultation(Consultation consultationToDelete);
+
     /** Returns the ConsultationList */
     ReadOnlyConsultationList getConsultationList();
 
@@ -246,6 +252,7 @@ public interface Model {
      * @throws NullPointerException if {@code predicate} is null.
      */
     void updateFilteredConsultationList(Predicate<Consultation> predicate);
+
 
     Person getMatchingStudentName(Name name);
 

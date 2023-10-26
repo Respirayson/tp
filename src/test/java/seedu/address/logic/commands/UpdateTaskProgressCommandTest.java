@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_TASK;
 import static seedu.address.logic.commands.CommandTestUtil.DESC_TASK2;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_PROGRESS;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PROGRESS_PENDING;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.commands.CommandTestUtil.showTaskAtIndex;
@@ -78,7 +78,7 @@ public class UpdateTaskProgressCommandTest {
     public void execute_invalidIndexUnfilteredList_throwsCommandException() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredTaskList().size() + 1);
         UpdateTaskProgressCommand updateTaskProgressCommand = new UpdateTaskProgressCommand(outOfBoundIndex,
-                new EditProgressDescriptorBuilder().withProgress(VALID_PROGRESS).build());
+                new EditProgressDescriptorBuilder().withProgress(VALID_PROGRESS_PENDING).build());
 
         assertCommandFailure(updateTaskProgressCommand, model, Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
     }
@@ -95,7 +95,7 @@ public class UpdateTaskProgressCommandTest {
         assertTrue(outOfBoundIndex.getZeroBased() < model.getTaskList().getTaskList().size());
 
         UpdateTaskProgressCommand editCommand = new UpdateTaskProgressCommand(outOfBoundIndex,
-                new EditProgressDescriptorBuilder().withProgress(VALID_PROGRESS).build());
+                new EditProgressDescriptorBuilder().withProgress(VALID_PROGRESS_PENDING).build());
 
         assertCommandFailure(editCommand, model, Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
     }

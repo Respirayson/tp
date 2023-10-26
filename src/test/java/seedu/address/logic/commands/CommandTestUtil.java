@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ASSIGNMENT;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_COMMENT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_DATE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_FINALS;
@@ -69,9 +70,16 @@ public class CommandTestUtil {
     public static final String VALID_TASK_DESCRIPTION = "Complete PRS";
     public static final String VALID_ASSIGNMENT_NAME = "Finding ELDRIC";
     public static final String INVALID_ASSIGNMENT_NAME = "Finding BOYD";
-    public static final String VALID_PROGRESS = "PENDING";
+    public static final String VALID_PROGRESS_PENDING = "PENDING";
     public static final String VALID_PROGRESS_DONE = "DONE";
+    public static final String VALID_GRADE = "1200";
+    public static final String GRADE_TOO_HIGH = "3000000";
+    public static final String GRADE_NOT_INT = "haha";
     public static final String GRADE_400 = "400";
+    public static final String VALID_COMMENT = "Great job!";
+    public static final String COMMENT_LENGTH_30 = "dddddddddddddddddddddddddddddd";
+    public static final String INVALID_COMMENT = COMMENT_LENGTH_30 + COMMENT_LENGTH_30 + COMMENT_LENGTH_30
+            + COMMENT_LENGTH_30 + COMMENT_LENGTH_30 + COMMENT_LENGTH_30 + COMMENT_LENGTH_30;
     public static final String VALID_DATE = "11/11/2023";
     public static final String VALID_TIME = "11:11";
 
@@ -98,7 +106,11 @@ public class CommandTestUtil {
     public static final String GT_DESC_FINALS = " " + PREFIX_FINALS + VALID_GT_FINALS;
     public static final String GT_DESC_PE = " " + PREFIX_PRACTICAL_EXAM + VALID_GT_PE;
     public static final String ASSIGNMENT_DESC = " " + PREFIX_ASSIGNMENT + "Finding ELDRIC";
-    public static final String GRADE_DESC_400 = " " + PREFIX_GRADE + "400";
+    public static final String GRADE_DESC_400 = " " + PREFIX_GRADE + GRADE_400;
+    public static final String GRADE_DESC_NOT_INT = " " + PREFIX_GRADE + GRADE_NOT_INT;
+    public static final String GRADE_DESC_TOO_HIGH = " " + PREFIX_GRADE + GRADE_TOO_HIGH;
+    public static final String COMMENT_DESC = " " + PREFIX_COMMENT + VALID_COMMENT;
+    public static final String COMMENT_DESC_TOO_LONG = " " + PREFIX_COMMENT + INVALID_COMMENT;
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + "James&"; // '&' not allowed in names
     public static final String INVALID_PHONE_DESC = " " + PREFIX_PHONE + "911a"; // 'a' not allowed in phones
     public static final String INVALID_EMAIL_DESC = " " + PREFIX_EMAIL + "bob!yahoo"; // missing '@' symbol
@@ -118,7 +130,7 @@ public class CommandTestUtil {
     public static final String TASK_DESCRIPTION_TASK1 = " " + PREFIX_TASK_DESCRIPTION + VALID_TASK_DESCRIPTION;
     public static final String TASK_NAME_TASK2 = " " + PREFIX_TASK_NAME + "Read quant guide";
     public static final String TASK_DESCRIPTION_TASK2 = " " + PREFIX_TASK_DESCRIPTION + "The green book";
-    public static final String TASK_PROGRESS_TASK1 = " " + PREFIX_TASK_PROGRESS + VALID_PROGRESS;
+    public static final String TASK_PROGRESS_TASK1 = " " + PREFIX_TASK_PROGRESS + VALID_PROGRESS_PENDING;
     public static final String DATE_TASK = " " + PREFIX_DATE + "22/10/2023";
     public static final String TASK_PRIORITY_TASK1 = " " + PREFIX_TASK_PRIORITY + "low";
     public static final String TASK_PRIORITY_TASK2 = " " + PREFIX_TASK_PRIORITY + "high";
@@ -150,7 +162,6 @@ public class CommandTestUtil {
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";
 
     public static final EditCommand.EditPersonDescriptor DESC_AMY;
-    // public static final EditCommand.EditPersonDescriptor DESC_AMY2;
     public static final EditCommand.EditPersonDescriptor DESC_BOB;
 
     static {
@@ -165,7 +176,7 @@ public class CommandTestUtil {
     public static final UpdateTaskProgressCommand.EditProgressDescriptor DESC_TASK2;
 
     static {
-        DESC_TASK = new EditProgressDescriptorBuilder().withProgress(VALID_PROGRESS).build();
+        DESC_TASK = new EditProgressDescriptorBuilder().withProgress(VALID_PROGRESS_PENDING).build();
         DESC_TASK2 = new EditProgressDescriptorBuilder().withProgress(VALID_PROGRESS_DONE).build();
     }
 

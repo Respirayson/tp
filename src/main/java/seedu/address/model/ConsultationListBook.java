@@ -72,6 +72,14 @@ public class ConsultationListBook implements ReadOnlyConsultationList {
     }
 
     /**
+     * Removes {@code key} from this {@code ConsultationListBook}.
+     * {@code key} must exist in the ConsultationListBook.
+     */
+    public void removeConsultation(Consultation consultation) {
+        consultationList.remove(consultation);
+    }
+
+    /**
      * Returns an observable list of consultations from the ConsultationListBook.
      *
      * @return An unmodifiable observable list of consultations.
@@ -93,5 +101,6 @@ public class ConsultationListBook implements ReadOnlyConsultationList {
         ConsultationListBook otherConsultationList = (ConsultationListBook) other;
         return consultationList.equals(otherConsultationList.consultationList);
     }
+
 
 }

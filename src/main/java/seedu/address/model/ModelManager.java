@@ -304,6 +304,11 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public void deleteConsultation(Consultation consultation) {
+        consultationList.removeConsultation(consultation);
+    }
+
+    @Override
     public ReadOnlyConsultationList getConsultationList() {
         return consultationList;
     }
