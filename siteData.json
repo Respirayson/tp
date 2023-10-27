@@ -51,10 +51,17 @@
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
+        "sessions": "Sessions",
+        "design-considerations": "Design Considerations:",
         "tasks": "Tasks",
+        "grades": "Grades",
+        "comments": "Comments",
+        "gradedtest": "GradedTest",
         "commands": "Commands",
         "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
         "proposed-data-archiving": "[Proposed] Data archiving",
+        "consultations": "Consultations:",
+        "design-considerations-7": "Design Considerations:",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
@@ -110,7 +117,15 @@
       "title": "User Guide",
       "headings": {
         "f-a-k-e-j-a-r-v-i-s-user-guide": "F.A.K.E.J.A.R.V.I.S. User Guide",
+        "introduction": "Introduction",
+        "how-to-use-the-user-guide": "How to use the User Guide",
+        "graphical-user-interface": "Graphical User Interface",
+        "task-card": "Task Card",
+        "consultation-card": "Consultation Card",
+        "session-card": "Session Card",
         "quick-start": "Quick start",
+        "command-format": "Command Format",
+        "command-parameters": "Command Parameters",
         "features": "Features",
         "viewing-help-help": "Viewing help : help",
         "adding-a-person-add": "Adding a person: add",
@@ -125,8 +140,7 @@
         "archiving-data-files-coming-in-v2-0": "Archiving data files [coming in v2.0]",
         "adding-a-task-addtask": "📝Adding a Task: addtask",
         "viewing-tasks-viewtasks": "👀Viewing Tasks: viewtasks",
-        "completing-a-task-completetask": "✅Completing a Task: completetask",
-        "editing-a-task-edittask": "🛠️Editing a Task: edittask",
+        "updating-a-task-s-progress-updateprogress": "✅Updating a Task's Progress: updateprogress",
         "deleting-a-task-deletetask": "❌Deleting a Task: deletetask",
         "taking-attendance-takeattendance": "📆Taking attendance: takeattendance",
         "viewing-attendance-viewattendance": "👀Viewing attendance: viewattendance",
@@ -190,7 +204,7 @@
       "headings": {
         "name-rayden": "Name: Rayden",
         "joke-of-the-day": "Joke of the day",
-        "project-fakejarvis": "Project: FAKEJARVIS"
+        "project-f-a-k-e-j-a-r-v-i-s": "Project: F.A.K.E.J.A.R.V.I.S."
       },
       "headingKeywords": {}
     },
@@ -198,7 +212,7 @@
       "src": "team/respirayson.md",
       "title": "Rayson Yeap's Project Portfolio Page",
       "headings": {
-        "project-fakejarvis": "Project: FAKEJARVIS"
+        "project-f-a-k-e-j-a-r-v-i-s": "Project: F.A.K.E.J.A.R.V.I.S."
       },
       "headingKeywords": {}
     },

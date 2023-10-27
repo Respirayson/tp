@@ -1,0 +1,66 @@
+@startuml GradedTest
+skinparam classAttributeIconSize 0
+
+class Person {
+}
+
+class GradedTest {
+    + gradedTestIndv: String
+    - readingAssessment1: ReadingAssessment1
+    - readingAssessment2: ReadingAssessment2
+    - midTerms: MidTerms
+    - finals: Finals
+    - practicalExam: PracticalExam
+    + GradedTest(readingAssessment1: ReadingAssessment1, readingAssessment2: ReadingAssessment2,
+          midTerms: MidTerms, finals: Finals, practicalExam: PracticalExam)
+    + GradedTest(gradedTestsIndv: String)
+    + getRA1(): ReadingAssessment1
+    + getRA2(): ReadingAssessment2
+    + getMidTerms(): MidTerms
+    + getFinals(): Finals
+    + getPracticalExam(): PracticalExam
+    + getGradedTests(): String
+    + isValidGradeTestName(test: String): boolean
+    + isSameGradedTest(otherGradedTest: GradedTest): boolean
+}
+
+class ReadingAssessment1 {
+    + value: String
+    + ReadingAssessment1(raResult: String)
+    + isValidRaResult(test: String)
+}
+
+class ReadingAssessment2 {
+    + value: String
+    + ReadingAssessment2(raResult: String)
+    + isValidRaResult(test: String)
+}
+
+class MidTerms {
+    + value: String
+    + MidTerms(midTermResults: String)
+    + isValidMidTermResult(test: String)
+}
+
+class Finals {
+    + value: String
+    + Finals(finalResults: String)
+    + isValidFinalsResult(test: String)
+}
+
+class PracticalExam {
+    + value: String
+    + Finals(peResults: String)
+    + isValidPeResult(test: String)
+}
+
+
+GradedTest o-- "*" Person: contains
+GradedTest *-- "1" ReadingAssessment1: readingAssessment1
+GradedTest *-- "1" ReadingAssessment2: readingAssessment2
+GradedTest *-- "1" MidTerms: midTerms
+GradedTest *-- "1" Finals: finals
+GradedTest *-- "1" PracticalExam: practicalExam
+
+
+@enduml
