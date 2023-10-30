@@ -39,7 +39,6 @@ deactivate XYZCommand
 XYZCommandParser --> AddressBookParser : c
 deactivate XYZCommandParser
 
-'Hidden arrow to position the destroy marker below the end of the activation bar.
 XYZCommandParser -[hidden]-> AddressBookParser
 destroy XYZCommandParser
 
@@ -49,7 +48,7 @@ deactivate AddressBookParser
 LogicManager -> XYZCommand : execute()
 
 activate XYZCommand
-ref over XYZCommand, Model : XYZCommandExecute
+ref over XYZCommand, Model : execute XYZCommand
 
 create CommandResult
 XYZCommand -> CommandResult

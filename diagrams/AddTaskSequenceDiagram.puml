@@ -1,0 +1,42 @@
+@startuml
+!include style.puml
+
+mainframe **sd** execute AddTaskCommand
+
+participant "x:AddTaskCommand" as AddTaskCommand LOGIC_COLOR
+
+participant ":Model" as Model MODEL_COLOR
+
+participant ":TaskListBook" as TaskListBook MODEL_COLOR_T2
+
+participant ":TaskList" as TaskList MODEL_COLOR_T3
+
+
+[-> AddTaskCommand : execute()
+activate AddTaskCommand
+
+AddTaskCommand -> Model : addTask(task)
+activate Model
+
+Model -> TaskListBook : addTask(task)
+activate TaskListBook
+
+TaskListBook -> TaskList : add(task)
+activate TaskList
+
+TaskList ---> TaskListBook
+deactivate TaskList
+
+TaskListBook ---> Model
+deactivate TaskListBook
+
+Model -> Model : updateFilteredTaskList()
+activate Model
+
+Model ---> Model
+deactivate Model
+
+Model --> AddTaskCommand
+deactivate Model
+
+@enduml

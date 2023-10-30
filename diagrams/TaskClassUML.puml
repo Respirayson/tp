@@ -1,0 +1,47 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Task {
+  - date: LocalDate
+  + getName(): TaskName
+  + getDescription(): TaskDescription
+  + getPriority(): TaskPriority
+  + getDate(): LocalDate
+  + getProgress(): TaskProgress
+  + isSameTask(Task): boolean
+}
+
+class TaskDescription {
+  + taskDescription: String
+  + <u>VALIDATION_REGEX: String
+  + <u>MESSAGE_CONSTRAINTS: String
+  + <u>isValidDescription(String): boolean
+}
+
+class TaskName {
+  + taskName: String
+  + <u>VALIDATION_REGEX: String
+  + <u>MESSAGE_CONSTRAINTS: String
+  + <u>isValidName(String): boolean
+}
+
+enum TaskPriority {
+    HIGH
+    MEDIUM
+    LOW
+    + <u>MESSAGE_CONSTRAINTS: String
+}
+
+enum TaskProgress {
+    NOT_STARTED
+    PENDING
+    DONE
+    + <u>MESSAGE_CONSTRAINTS: String
+}
+
+Task *-- "1" TaskDescription: taskDescription
+Task *-- "1" TaskName: taskName
+Task *-- "0..1" TaskPriority: priority
+Task *-- "0..1" TaskProgress: progress
+
+@enduml
