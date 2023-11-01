@@ -124,7 +124,7 @@
         "command-format": "Command Format",
         "command-parameters": "Command Parameters",
         "features": "Features",
-        "miscellaneous-commands": "Miscellaneous Commands",
+        "general-commands": "General Commands",
         "student-management": "Student Management",
         "task-management": "Task Management",
         "attendance-management": "Attendance Management",
@@ -133,7 +133,8 @@
         "consultation-management": "Consultation Management",
         "faq": "FAQ",
         "known-issues": "Known issues",
-        "command-summary": "Command summary"
+        "command-summary": "Command summary",
+        "interpreting-errors": "Interpreting Errors"
       },
       "headingKeywords": {}
     },

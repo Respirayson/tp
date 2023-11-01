@@ -1,0 +1,22 @@
+@startuml
+!include style.puml
+
+mainframe **sd** execute ViewTasksCommand
+
+participant "d:ViewTasksCommand" as ViewTasksCommand LOGIC_COLOR
+
+participant ":Model" as Model MODEL_COLOR
+
+[-> ViewTasksCommand : execute()
+activate ViewTasksCommand
+
+ViewTasksCommand -> Model : updateFilteredTaskList(predicate)
+activate Model
+
+Model --> ViewTasksCommand
+deactivate Model
+
+[<-- ViewTasksCommand
+deactivate ViewTasksCommand
+
+@enduml

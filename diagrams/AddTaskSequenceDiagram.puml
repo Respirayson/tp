@@ -39,4 +39,7 @@ deactivate Model
 Model --> AddTaskCommand
 deactivate Model
 
+[<-- AddTaskCommand
+deactivate AddTaskCommand
+
 @enduml
