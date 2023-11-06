@@ -8,7 +8,10 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_PRIORITY;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_PROGRESS;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_TASKS;
 
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Predicate;
 
 import seedu.address.logic.commands.ViewTasksCommand;
@@ -46,27 +49,42 @@ public class ViewTasksCommandParser implements Parser<ViewTasksCommand> {
         Predicate<Task> predicate = PREDICATE_SHOW_ALL_TASKS;
 
         if (argMultimap.getValue(PREFIX_TASK_NAME).isPresent()) {
-            String[] taskNameKeywords = argMultimap.getValue(PREFIX_TASK_NAME).get().split("\\s+");
+            String[] taskNameKeywords = ParserUtil.parseTaskName(
+                    argMultimap.getValue(PREFIX_TASK_NAME).get()).taskName.split("\\s+");
             predicate = new TaskNameContainsKeywordsPredicate(Arrays.asList(taskNameKeywords));
         }
 
         if (argMultimap.getValue(PREFIX_TASK_DESCRIPTION).isPresent()) {
-            String[] taskDescKeywords = argMultimap.getValue(PREFIX_TASK_DESCRIPTION).get().split("\\s+");
+            String[] taskDescKeywords = ParserUtil.parseTaskDescription(
+                    argMultimap.getValue(PREFIX_TASK_DESCRIPTION).get()).description.split("\\s+");
             predicate = new TaskDescriptionContainsKeywordsPredicate(Arrays.asList(taskDescKeywords));
         }
 
         if (argMultimap.getValue(PREFIX_TASK_PRIORITY).isPresent()) {
             String[] taskPriorityKeywords = argMultimap.getValue(PREFIX_TASK_PRIORITY).get().split("\\s+");
-            predicate = new TaskPriorityContainsKeywordsPredicate(Arrays.asList(taskPriorityKeywords));
+
+            List<String> checkedTaskPriorityKeywords = new ArrayList<>();
+            for (String str : taskPriorityKeywords) {
+                checkedTaskPriorityKeywords.add(ParserUtil.parseTaskPriority(str).name());
+            }
+
+            predicate = new TaskPriorityContainsKeywordsPredicate(checkedTaskPriorityKeywords);
         }
 
         if (argMultimap.getValue(PREFIX_TASK_PROGRESS).isPresent()) {
             String[] taskProgressKeywords = argMultimap.getValue(PREFIX_TASK_PROGRESS).get().split("\\s+");
-            predicate = new TaskProgressContainsKeywordsPredicate(Arrays.asList(taskProgressKeywords));
+
+            List<String> checkedTaskProgressKeywords = new ArrayList<>();
+            for (String str : taskProgressKeywords) {
+                checkedTaskProgressKeywords.add(ParserUtil.parseTaskProgress(str).name());
+            }
+
+            predicate = new TaskProgressContainsKeywordsPredicate(checkedTaskProgressKeywords);
         }
 
         if (argMultimap.getValue(PREFIX_DATE).isPresent()) {
-            String[] dateKeywords = argMultimap.getValue(PREFIX_DATE).get().split("\\s+");
+            String[] dateKeywords = ParserUtil.parseDate(argMultimap.getValue(PREFIX_DATE).get())
+                    .format(DateTimeFormatter.ofPattern("dd/MM/yyyy")).split("\\s+");
             predicate = new DateContainsKeywordsPredicate(Arrays.asList(dateKeywords));
         }
 

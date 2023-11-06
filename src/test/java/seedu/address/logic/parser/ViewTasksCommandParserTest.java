@@ -52,14 +52,14 @@ public class ViewTasksCommandParserTest {
         assertParseSuccess(parser, " " + PREFIX_TASK_DESCRIPTION + "prs book", expectedCommand);
 
         // multiple whitespaces between keywords
-        assertParseSuccess(parser, " " + PREFIX_TASK_DESCRIPTION + "prs \n \t book", expectedCommand);
+        assertParseSuccess(parser, " " + PREFIX_TASK_DESCRIPTION + "prs \t book", expectedCommand);
     }
 
     @Test
     public void parse_validTaskProgressArgs_returnsViewTasksCommand() {
         // no leading and trailing whitespaces
         ViewTasksCommand expectedCommand =
-                new ViewTasksCommand(new TaskProgressContainsKeywordsPredicate(Arrays.asList("done", "pending")));
+                new ViewTasksCommand(new TaskProgressContainsKeywordsPredicate(Arrays.asList("DONE", "PENDING")));
         assertParseSuccess(parser, " " + PREFIX_TASK_PROGRESS + "done pending", expectedCommand);
 
         // multiple whitespaces between keywords
@@ -70,7 +70,7 @@ public class ViewTasksCommandParserTest {
     public void parse_validTaskPriorityArgs_returnsViewTasksCommand() {
         // no leading and trailing whitespaces
         ViewTasksCommand expectedCommand =
-                new ViewTasksCommand(new TaskPriorityContainsKeywordsPredicate(Arrays.asList("low", "high")));
+                new ViewTasksCommand(new TaskPriorityContainsKeywordsPredicate(Arrays.asList("LOW", "HIGH")));
         assertParseSuccess(parser, " " + PREFIX_TASK_PRIORITY + "low high", expectedCommand);
 
         // multiple whitespaces between keywords
