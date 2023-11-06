@@ -3,20 +3,20 @@
     "name" : "Do cs2103t",
     "description" : "Complete PRS",
     "priority": "LOW",
-    "date": "22/10/2023",
+    "date": "22/10/2024",
     "progress": "NOT_STARTED"
   }, {
     "name" : "Read quant guide",
     "description" : "The green book",
     "priority": "MEDIUM",
-    "date": "22/02/2023",
+    "date": "22/02/2024",
     "progress": "DONE"
   },
   {
     "name": "Study cs3233",
     "description": "Read Steven Halim Book for competitive programming",
     "priority": "LOW",
-    "date": "22/10/2023",
+    "date": "22/10/2024",
     "progress": "PENDING"
   } ]
 }

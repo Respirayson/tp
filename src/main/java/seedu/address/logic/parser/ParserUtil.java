@@ -45,6 +45,7 @@ public class ParserUtil {
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
     public static final String MESSAGE_INVALID_DATE = "Date is needs to be in the format dd/MM/yyyy, "
             + "or date provided does not exist.";
+    public static final String MESSAGE_PAST_DATE = "Date has already been crossed.";
     public static final String MESSAGE_INVALID_TIME = "Time is needs to be in the format HH:mm.";
 
     /**

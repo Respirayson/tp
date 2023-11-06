@@ -5,8 +5,10 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_DATE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_DESCRIPTION;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TASK_PRIORITY;
+import static seedu.address.logic.parser.ParserUtil.MESSAGE_PAST_DATE;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.stream.Stream;
 
 import seedu.address.logic.commands.AddTaskCommand;
@@ -47,6 +49,11 @@ public class AddTaskCommandParser implements Parser<AddTaskCommand> {
 
         if (argMultimap.getValue(PREFIX_DATE).isPresent()) {
             date = ParserUtil.parseDate(argMultimap.getValue(PREFIX_DATE).get());
+
+            if (LocalDate.now().until(date, ChronoUnit.DAYS) < 0L) {
+                throw new ParseException(MESSAGE_PAST_DATE);
+            }
+
         } else {
             date = null;
         }

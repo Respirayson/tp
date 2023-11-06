@@ -158,7 +158,7 @@ public class ViewTasksCommandTest {
     @Test
     public void execute_multipleKeywordsDate_multipleTasksFound() {
         String expectedMessage = String.format(MESSAGE_TASKS_LISTED_OVERVIEW, 2);
-        DateContainsKeywordsPredicate predicate = prepareDatePredicate("22/10/2023");
+        DateContainsKeywordsPredicate predicate = prepareDatePredicate("22/10/2024");
         ViewTasksCommand command = new ViewTasksCommand(predicate);
         expectedModel.updateFilteredTaskList(predicate);
         assertCommandSuccess(command, model, expectedMessage, expectedModel);

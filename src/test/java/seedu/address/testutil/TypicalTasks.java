@@ -15,7 +15,7 @@ public class TypicalTasks {
             .withName("Do cs2103t")
             .withDescription("Complete PRS")
             .withPriority("LOW")
-            .withDate("22/10/2023")
+            .withDate("22/10/2024")
             .withProgress("NOT_STARTED")
             .build();
 
@@ -23,7 +23,7 @@ public class TypicalTasks {
             .withName("Read quant guide")
             .withDescription("The green book")
             .withPriority("MEDIUM")
-            .withDate("22/02/2023")
+            .withDate("22/02/2024")
             .withProgress("DONE")
             .build();
 
@@ -31,7 +31,7 @@ public class TypicalTasks {
             .withName("Study cs3233")
             .withDescription("Read Steven Halim Book for competitive programming")
             .withPriority("LOW")
-            .withDate("22/10/2023")
+            .withDate("22/10/2024")
             .withProgress("PENDING")
             .build();
 
@@ -39,14 +39,14 @@ public class TypicalTasks {
             .withName("Plan for mods")
             .withDescription("SEPSPEPESEP")
             .withPriority("LOW")
-            .withDate("22/10/2023")
+            .withDate("22/10/2024")
             .build();
 
     public static final Task TASK5 = new TaskBuilder()
             .withName("Plan for next sem")
             .withDescription("atap")
             .withPriority("MEDIUM")
-            .withDate("22/10/2023")
+            .withDate("22/10/2024")
             .build();
 
     private TypicalTasks() {} // prevents instantiation

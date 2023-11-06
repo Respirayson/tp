@@ -137,7 +137,7 @@ public class CommandTestUtil {
     public static final String TASK_NAME_TASK2 = " " + PREFIX_TASK_NAME + "Read quant guide";
     public static final String TASK_DESCRIPTION_TASK2 = " " + PREFIX_TASK_DESCRIPTION + "The green book";
     public static final String TASK_PROGRESS_TASK1 = " " + PREFIX_TASK_PROGRESS + VALID_PROGRESS_PENDING;
-    public static final String DATE_TASK = " " + PREFIX_DATE + "22/10/2023";
+    public static final String DATE_TASK = " " + PREFIX_DATE + "22/10/2024";
     public static final String TASK_PRIORITY_TASK1 = " " + PREFIX_TASK_PRIORITY + "low";
     public static final String TASK_PRIORITY_TASK2 = " " + PREFIX_TASK_PRIORITY + "high";
     public static final String INVALID_TASK_NAME = " " + PREFIX_TASK_NAME + "@@@@HER"; // '@' not allowed in name

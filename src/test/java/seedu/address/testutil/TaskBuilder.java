@@ -18,7 +18,7 @@ public class TaskBuilder {
     public static final String DEFAULT_NAME = "Borrow book";
     public static final String DEFAULT_DESCRIPTION = "At Central Library";
     public static final String DEFAULT_PRIORITY = "LOW";
-    public static final String DEFAULT_DATE = "22/10/2023";
+    public static final String DEFAULT_DATE = "22/10/2024";
 
     private TaskName name;
     private TaskDescription description;
