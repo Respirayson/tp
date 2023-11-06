@@ -60,7 +60,7 @@ public class TaskCard extends UiPart<Region> {
                 dueDate.setStyle("-fx-background-color: red;");
             }
         } else {
-            dueDate.setText("-");
+            dueDate.setText("No Due Date");
         }
 
         boolean isDone = task.getProgress().equals(TaskProgress.DONE);
@@ -81,13 +81,13 @@ public class TaskCard extends UiPart<Region> {
             priority.setStyle("-fx-fill: green");
             break;
         case MEDIUM:
-            priority.setStyle("-fx-fill: yellow");
+            priority.setStyle("-fx-fill: blue");
             break;
         case HIGH:
             priority.setStyle("-fx-fill: red");
             break;
         default:
-            priority.setStyle("-fx-fill: white");
+            priority.setStyle("-fx-fill: black");
         }
 
         name.setStrikethrough(isDone);
