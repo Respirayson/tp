@@ -43,8 +43,8 @@ import seedu.address.model.task.TaskProgress;
 public class ParserUtil {
 
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
-    public static final String MESSAGE_INVALID_DATE = "Date is needs to be in the format dd/MM/yyyy. "
-            + "Or Date does not exist.";
+    public static final String MESSAGE_INVALID_DATE = "Date is needs to be in the format dd/MM/yyyy, "
+            + "or date provided does not exist.";
     public static final String MESSAGE_INVALID_TIME = "Time is needs to be in the format HH:mm.";
 
     /**
@@ -170,8 +170,8 @@ public class ParserUtil {
     public static LocalDate parseDate(String date) throws ParseException {
         requireNonNull(date);
         String trimmedDate = date.trim();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu");
-        formatter.withResolverStyle(ResolverStyle.STRICT);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/uuuu")
+                .withResolverStyle(ResolverStyle.STRICT);
         try {
             return LocalDate.parse(trimmedDate, formatter);
         } catch (DateTimeParseException e) {
