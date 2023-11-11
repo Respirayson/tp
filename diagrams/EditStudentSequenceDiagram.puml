@@ -1,0 +1,80 @@
+@startuml
+!include style.puml
+
+mainframe **sd** EditCommandExecute
+
+participant "e:EditCommand" as EditCommand LOGIC_COLOR
+
+participant "model:Model" as Model MODEL_COLOR
+
+participant ":List<Person>" as Persons MODEL_COLOR_T4
+
+participant "xyz:List<XYZ>" as List MODEL_COLOR_T2
+
+participant "entry:XYZ" as XYZ MODEL_COLOR_T3
+
+
+
+[-> EditCommand : execute()
+activate EditCommand
+
+EditCommand -> Model : getFilteredPersonList
+activate Model
+
+Model ---> EditCommand
+
+EditCommand -> Persons : get(targetIndex)
+activate Persons
+
+Persons ---> EditCommand
+deactivate Persons
+
+EditCommand -> EditCommand : createEditedPerson(personToEdit, editPersonDescriptor)
+activate EditCommand
+
+EditCommand ---> EditCommand
+deactivate EditCommand
+
+EditCommand -> Model : setPerson(target, editedPerson)
+
+Model -> List : setStudent(target, editedPerson)
+activate List
+
+loop for all entries in xyz
+    alt entry contains target
+        List -> XYZ : replaceStudent(target, editedPerson)
+        activate XYZ
+
+        XYZ ---> List
+        deactivate XYZ
+        end
+
+    List -> List : newList.add(entry)
+    activate List
+
+    List ---> List
+    deactivate List
+    end
+
+List -> List : replace(newList)
+activate List
+
+List ---> List
+deactivate List
+
+List ---> Model
+deactivate List
+
+Model -> Model : updateFilteredPersonList()
+activate Model
+
+Model ---> Model
+deactivate Model
+
+Model ---> EditCommand
+deactivate Model
+
+[<-- EditCommand
+deactivate EditCommand
+
+@enduml

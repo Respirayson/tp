@@ -6,51 +6,117 @@ skinparam classBackgroundColor MODEL_COLOR
 
 Package Model as ModelPackage <<Rectangle>>{
 Class "<<interface>>\nReadOnlyAddressBook" as ReadOnlyAddressBook
+Class "<<interface>>\nReadOnlyTaskList" as ReadOnlyTaskList
+Class "<<interface>>\nReadOnlyGradedTestList" as ReadOnlyGradedTestList
+Class "<<interface>>\nReadOnlyConsultationList" as ReadOnlyConsultationList
+Class "<<interface>>\nReadOnlySessionList" as ReadOnlySessionList
 Class "<<interface>>\nReadOnlyUserPrefs" as ReadOnlyUserPrefs
 Class "<<interface>>\nModel" as Model
 Class AddressBook
+Class TaskListBook
+Class SessionListBook
+Class ConsultationListBook
+Class GradedTestListBook
 Class ModelManager
 Class UserPrefs
 
 Class UniquePersonList
 Class Person
-Class Address
+Class TelegramHandle
 Class Email
 Class Name
 Class Phone
 Class Tag
 Class GradedTest
 
+Class TaskList
+Class Task
+
+Class ConsultationList
+Class Consultation
+
+Class SessionList
+Class Session
+
+Class GradedTestList
+Class GradedTest
+
+Class AssignmentMap
+
 Class I #FFFFFF
+Class J #FFFFFF
+Class K #FFFFFF
+Class S #FFFFFF
+Class T #FFFFFF
 }
 
 Class HiddenOutside #FFFFFF
 HiddenOutside ..> Model
 
 AddressBook .up.|> ReadOnlyAddressBook
+TaskListBook .up.|> ReadOnlyTaskList
+GradedTestListBook .up.|> ReadOnlyGradedTestList
+SessionListBook .up.|> ReadOnlySessionList
+ConsultationListBook .up.|> ReadOnlyConsultationList
 
 ModelManager .up.|> Model
 Model .right.> ReadOnlyUserPrefs
 Model .left.> ReadOnlyAddressBook
+Model .left.> ReadOnlyTaskList
+Model .left.> ReadOnlyGradedTestList
+Model .left.> ReadOnlySessionList
+Model .left.> ReadOnlyConsultationList
 ModelManager -left-> "1" AddressBook
+ModelManager -down-> "1" TaskListBook
+ModelManager -down-> "1" GradedTestListBook
+ModelManager -down-> "1" ConsultationListBook
+ModelManager -down-> "1" SessionListBook
 ModelManager -right-> "1" UserPrefs
 UserPrefs .up.|> ReadOnlyUserPrefs
 
 AddressBook *--> "1" UniquePersonList
 UniquePersonList --> "~* all" Person
-Person *--> Name
-Person *--> Phone
-Person *--> Email
-Person *--> Address
-Person *--> "*" Tag
-Person *--> "*" GradedTest
-
 Person -[hidden]up--> I
 UniquePersonList -[hidden]right-> I
 
+Person *--> Name
+Person *--> Phone
+Person *--> Email
+Person *--> TelegramHandle
+Person *--> "*" Tag
+Person *--> "*" GradedTest
+Person *--> AssignmentMap
+
+
+TaskListBook *--> "1" TaskList
+TaskList --> "~* all" Task
+Task -[hidden]up--> T
+TaskList -[hidden]right-> T
+
+GradedTestListBook *--> "1" GradedTestList
+GradedTestList --> "~* all" GradedTest
+GradedTest -[hidden]up--> K
+GradedTestList -[hidden]right-> J
+
+ConsultationListBook *--> "1" ConsultationList
+ConsultationList --> "~* all" Consultation
+Consultation --> "*" Person
+Consultation -[hidden]up--> K
+ConsultationList -[hidden]right-> J
+
+SessionListBook *--> "1" SessionList
+SessionList --> "~* all" Session
+Session --> "*" Person
+Session -[hidden]up--> S
+SessionList -[hidden]right-> K
+
 Name -[hidden]right-> Phone
-Phone -[hidden]right-> Address
-Address -[hidden]right-> Email
+Phone -[hidden]right-> TelegramHandle
+TelegramHandle -[hidden]right-> Email
 
 ModelManager --> "~* filtered" Person
+ModelManager --> "~* filtered" Task
+ModelManager --> "~* filtered" Session
+ModelManager --> "~* filtered" GradedTest
+ModelManager --> "~* filtered" Consultation
 @enduml

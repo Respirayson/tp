@@ -1,0 +1,26 @@
+@startuml
+!include style.puml
+start
+:Avenger enters delete command;
+:Parse command text;
+if () then ([Index parameter is valid])
+:Delete Student
+matching given Index;
+if () then ([Student with given Index exists])
+fork
+    :Delete Student from Consultations;
+fork again
+    :Delete Student from Sessions;
+fork again
+    :Delete Student from Address Book;
+end fork
+else ([else])
+:Show Student not found
+error to Avenger;
+endif
+else ([else])
+:Show invalid usage
+error to Avenger;
+endif
+stop
+@enduml

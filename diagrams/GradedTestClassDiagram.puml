@@ -1,4 +1,5 @@
 @startuml GradedTest
+hide circle
 skinparam classAttributeIconSize 0
 
 class Person {

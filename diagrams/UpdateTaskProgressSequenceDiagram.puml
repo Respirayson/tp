@@ -7,13 +7,21 @@ participant "x:UpdateTaskProgressCommand" as UpdateTaskProgressCommand LOGIC_COL
 
 participant ":Model" as Model MODEL_COLOR
 
-participant ":TaskListBook" as TaskListBook MODEL_COLOR_T2
-
-participant ":TaskList" as TaskList MODEL_COLOR_T3
-
+participant ":List<Task>" as TaskList MODEL_COLOR_T3
 
 [-> UpdateTaskProgressCommand : execute()
 activate UpdateTaskProgressCommand
+
+UpdateTaskProgressCommand -> Model : getFilteredTaskList()
+activate Model
+
+Model --> UpdateTaskProgressCommand
+
+UpdateTaskProgressCommand -> TaskList : get(targetIndex)
+activate TaskList
+
+TaskList --> UpdateTaskProgressCommand
+deactivate TaskList
 
 UpdateTaskProgressCommand -> UpdateTaskProgressCommand : createTask(taskToEdit, descriptor)
 activate UpdateTaskProgressCommand
@@ -22,23 +30,10 @@ UpdateTaskProgressCommand ---> UpdateTaskProgressCommand
 deactivate UpdateTaskProgressCommand
 
 UpdateTaskProgressCommand -> Model : setTask(taskToEdit, editedTask)
-activate Model
-
-Model -> TaskListBook : setTask(taskToEdit, editedTask)
-activate TaskListBook
-
-TaskListBook -> TaskList : editTask(taskToEdit, editedTask)
-activate TaskList
-
-TaskList ---> TaskListBook
-deactivate TaskList
-
-TaskListBook ---> Model
-deactivate TaskListBook
 
 Model --> UpdateTaskProgressCommand
 
-UpdateTaskProgressCommand --> Model : updateFilteredTaskList()
+UpdateTaskProgressCommand -> Model : updateFilteredTaskList()
 
 Model ---> UpdateTaskProgressCommand
 deactivate Model

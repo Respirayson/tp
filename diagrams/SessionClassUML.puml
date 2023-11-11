@@ -1,4 +1,5 @@
 @startuml Session
+hide circle
 skinparam classAttributeIconSize 0
 
 class Session {
