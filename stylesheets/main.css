@@ -194,10 +194,7 @@ blockquote {
     border-color: #badbcc;
 }
 
-.tabler.markbind-table {
-    width: 80%;
-}
-
 .markbind-table {
     width: auto;
+    min-width: 80%;
 }
