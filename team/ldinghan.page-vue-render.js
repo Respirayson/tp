@@ -44,6 +44,6 @@ with(this){return _c('li',[_c('p',[_c('strong',[_v("Tools")]),_v(":")]),_v(" "),
 with(this){return _c('li',[_c('p',[_c('strong',[_v("Contributions beyond the project team")]),_v(":")]),_v(" "),_c('ul',[_c('li',[_v("Contributed to module forum page to answer queries on code coverage "),_c('a',{attrs:{"href":"https://github.com/nus-cs2103-AY2324S1/forum/issues/267#issuecomment-1767768888"}},[_v("here")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Sat, 11 Nov 2023, 16:13:54 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Sat, 11 Nov 2023, 18:25:26 GMT+8]")])])])}
 }];
   

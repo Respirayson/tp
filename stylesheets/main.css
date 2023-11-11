@@ -170,8 +170,7 @@ h6 {
 }
 
 blockquote {
-  border-left: 0.25em solid
-  border-left-color: #46F2F1;  /* left border color */
+  border-left: 0.25em solid #46F2F1;  /* left border color */
   color: #6a737d; /* text color*/
   padding: 0 1rem;
 }
