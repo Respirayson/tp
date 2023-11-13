@@ -14,12 +14,33 @@ Class JsonUserPrefsStorage
 Class "<<interface>>\nStorage" as Storage
 Class StorageManager
 
-package "AddressBook Storage" #F4F6F6{
-Class "<<interface>>\nAddressBookStorage" as AddressBookStorage
-Class JsonAddressBookStorage
-Class JsonSerializableAddressBook
+package "XYZ Storage" #F4F6F6{
+Class "<<interface>>\nXYZStorage" as XYZStorage
+note right
+      XYZ denotes AddressBook,
+      ConsultationList and
+      SessionList
+end note
+Class JsonXYZStorage
+Class JsonSerializableXYZ
 Class JsonAdaptedPerson
 Class JsonAdaptedTag
+Class JsonAdaptedAssignment
+Class JsonAdaptedAssignmentMap
+}
+
+package "TaskList Storage" #F4F6F6{
+Class "<<interface>>\nTaskListStorage" as TaskListStorage
+Class JsonTaskListStorage
+Class JsonSerializableTaskList
+Class JsonAdaptedTask
+}
+
+package "GradedTestList Storage" #F4F6F6{
+Class "<<interface>>\nGradedTestListStorage" as GradedTestListStorage
+Class JsonGradedTestListStorage
+Class JsonSerializableGradedTestList
+Class JsonAdaptedGradedTest
 }
 
 }
@@ -29,15 +50,28 @@ HiddenOutside ..> Storage
 
 StorageManager .up.|> Storage
 StorageManager -up-> "1" UserPrefsStorage
-StorageManager -up-> "1" AddressBookStorage
+StorageManager -up-> "1" XYZStorage
+StorageManager -down-> "1" TaskListStorage
+StorageManager -down-> "1" GradedTestListStorage
 
 Storage -left-|> UserPrefsStorage
-Storage -right-|> AddressBookStorage
+Storage -right-|> XYZStorage
 
 JsonUserPrefsStorage .up.|> UserPrefsStorage
-JsonAddressBookStorage .up.|> AddressBookStorage
-JsonAddressBookStorage ..> JsonSerializableAddressBook
-JsonSerializableAddressBook --> "*" JsonAdaptedPerson
+JsonXYZStorage .up.|> XYZStorage
+JsonTaskListStorage .up.|> TaskListStorage
+JsonGradedTestListStorage .up.|> GradedTestListStorage
+
+JsonXYZStorage ..> JsonSerializableXYZ
+JsonSerializableXYZ --> "*" JsonAdaptedPerson
+JsonTaskListStorage ..> JsonSerializableTaskList
+JsonSerializableTaskList --> "*" JsonAdaptedTask
+JsonGradedTestListStorage ..> JsonSerializableGradedTestList
+JsonSerializableGradedTestList --> "*" JsonAdaptedGradedTest
+
 JsonAdaptedPerson --> "*" JsonAdaptedTag
+JsonAdaptedPerson --> "1" JsonAdaptedAssignmentMap
+JsonAdaptedPerson --> "*" JsonAdaptedGradedTest
+JsonAdaptedAssignmentMap --> "*" JsonAdaptedAssignment
 
 @enduml
