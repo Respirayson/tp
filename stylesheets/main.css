@@ -166,7 +166,7 @@ h6 {
 }
 
 .hljs.inline.no-lang,
-.li .code {
+li code {
   color: #A46AFF; /* GUI purple */
 }
 

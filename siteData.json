@@ -136,6 +136,14 @@
         "faq": "FAQ",
         "known-issues": "Known issues",
         "command-summary": "Command summary",
+        "general-commands-2": "General commands",
+        "student-commands": "Student commands",
+        "task-commands": "Task commands",
+        "attendance-commands": "Attendance commands",
+        "assignment-commands": "Assignment commands",
+        "graded-test-commands": "Graded Test commands",
+        "session-commands": "Session commands",
+        "consultation-commands": "Consultation commands",
         "encountering-errors": "Encountering Errors"
       },
       "headingKeywords": {}
