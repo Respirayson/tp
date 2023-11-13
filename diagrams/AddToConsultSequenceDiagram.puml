@@ -1,0 +1,48 @@
+@startuml
+!include style.puml
+
+mainframe **sd** execute AddToConsultCommand
+
+participant "x:AddToConsultCommand" as AddToConsultCommand LOGIC_COLOR
+
+participant ":Model" as Model MODEL_COLOR
+
+participant ":List<Consultation>" as ConsultationList MODEL_COLOR_T3
+
+[-> AddToConsultCommand : execute()
+activate AddToConsultCommand
+
+AddToConsultCommand -> Model : getFilteredConsultationList()
+activate Model
+
+Model --> AddToConsultCommand
+deactivate Model
+
+AddToConsultCommand -> ConsultationList : get(targetIndex)
+activate ConsultationList
+
+ConsultationList --> AddToConsultCommand
+deactivate ConsultationList
+
+AddToConsultCommand -> AddToConsultCommand : createUpdatedConsultation(model, consultationToAddStudent, descriptor)
+activate AddToConsultCommand
+
+AddToConsultCommand ---> AddToConsultCommand
+deactivate AddToConsultCommand
+
+AddToConsultCommand -> Model : setConsultation(consultationToAddStudent, updatedConsultation)
+activate Model
+
+Model --> AddToConsultCommand
+deactivate Model
+
+AddToConsultCommand -> Model : updateFilteredConsultationList()
+activate Model
+
+Model ---> AddToConsultCommand
+deactivate Model
+
+[<-- AddToConsultCommand
+deactivate AddToConsultCommand
+
+@enduml

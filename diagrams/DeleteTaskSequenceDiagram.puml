@@ -16,6 +16,7 @@ DeleteTaskCommand -> Model : getFilteredTaskList()
 activate Model
 
 Model --> DeleteTaskCommand
+deactivate Model
 
 DeleteTaskCommand -> TaskList : get(targetIndex)
 activate TaskList
@@ -24,6 +25,7 @@ TaskList --> DeleteTaskCommand
 deactivate TaskList
 
 DeleteTaskCommand -> Model : deleteTask(task)
+activate Model
 
 Model --> DeleteTaskCommand
 deactivate Model

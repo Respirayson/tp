@@ -16,6 +16,7 @@ UpdateTaskProgressCommand -> Model : getFilteredTaskList()
 activate Model
 
 Model --> UpdateTaskProgressCommand
+deactivate Model
 
 UpdateTaskProgressCommand -> TaskList : get(targetIndex)
 activate TaskList
@@ -30,10 +31,13 @@ UpdateTaskProgressCommand ---> UpdateTaskProgressCommand
 deactivate UpdateTaskProgressCommand
 
 UpdateTaskProgressCommand -> Model : setTask(taskToEdit, editedTask)
+activate Model
 
 Model --> UpdateTaskProgressCommand
+deactivate Model
 
 UpdateTaskProgressCommand -> Model : updateFilteredTaskList()
+activate Model
 
 Model ---> UpdateTaskProgressCommand
 deactivate Model

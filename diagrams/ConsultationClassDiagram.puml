@@ -1,20 +1,36 @@
-@startuml
+@startuml Consultation
 hide circle
 skinparam classAttributeIconSize 0
 
 Class Consultation {
     -date: LocalDate
     -time: LocalTime
+    +addStudent(Person): Consultation
+    +removeStudent(Person): Consultation
+    +replaceStudent(Person, Person)
     +getDate(): LocalDate
     +getTime(): LocalTime
     +getStudentsNames(): Set<Name>
-    +getStudents(): Set<Person>
+    +getStudents(): StudentSet
     +isSameConsultation(): boolean
+}
+
+Class StudentSet {
+    +<u>MESSAGE_CONSTRAINTS: String
+    +add(Person)
+    +addAll(Person)
+    +remove(Person): boolean
+    +toStudentNames(): String
+    +getStudents(): StudentSet
+    +getSetOfStudents(): Set<Person>
+    +contains(Person): boolean
 }
 
 Class Person {
     -name: Name
 }
 
-Consultation o-- "1...*" Person : students
+Consultation *-- "1" StudentSet : has
+StudentSet o-- "1..." Person: students
+
 @enduml

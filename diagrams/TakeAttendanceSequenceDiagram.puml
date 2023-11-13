@@ -1,0 +1,56 @@
+@startuml
+!include style.puml
+
+mainframe **sd** execute TakeAttendanceCommand
+
+participant "x:TakeAttendanceCommand" as TakeAttendanceCommand LOGIC_COLOR
+
+participant ":Model" as Model MODEL_COLOR
+
+participant ":Session" as Session MODEL_COLOR_T3
+
+participant ":Person" as Person MODEL_COLOR_T2
+
+[-> TakeAttendanceCommand : execute()
+activate TakeAttendanceCommand
+
+TakeAttendanceCommand -> Model: findSessionBySessionNumber(sessionNumber)
+activate Model
+
+Model --> TakeAttendanceCommand:
+deactivate Model
+
+TakeAttendanceCommand -> Session: getStudents()
+activate Session
+
+Session --> TakeAttendanceCommand
+deactivate Session
+
+TakeAttendanceCommand -> Model: getMatchingStudentName(name)
+activate Model
+
+Model --> TakeAttendanceCommand
+deactivate Model
+
+TakeAttendanceCommand -> Person: attendSession(sessionNumber)
+activate Person
+
+Person --> TakeAttendanceCommand
+deactivate Person
+
+TakeAttendanceCommand -> Model: setSession(target, updatedSession)
+activate Model
+
+Model --> TakeAttendanceCommand
+deactivate Model
+
+TakeAttendanceCommand -> Model: updateFilteredSessionList()
+activate Model
+
+Model --> TakeAttendanceCommand
+deactivate Model
+
+[<-- TakeAttendanceCommand
+deactivate TakeAttendanceCommand
+
+@enduml

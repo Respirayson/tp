@@ -1,0 +1,41 @@
+@startuml
+
+!include style.puml
+
+start
+:Avenger enters create session command;
+
+:Parse command text;
+
+if () then ([Session number parameter is valid])
+:Create Session
+with given session number;
+
+if () then ([Student name(s) exist in Address Book])
+:Student matching given
+name(s) added to session;
+
+if () then ([Session already exists])
+:Show Duplicate Session
+error to Avenger;
+
+else ([else])
+:Session is successfully
+created;
+endif
+
+else ([else])
+:Show Student not found
+error to Avenger;
+endif
+
+
+else ([else])
+:Show invalid session number
+error to Avenger;
+endif
+
+
+stop
+
+@enduml
