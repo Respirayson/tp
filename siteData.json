@@ -67,7 +67,19 @@
         "appendix-instructions-for-manual-testing": "Appendix: Instructions for manual testing",
         "launch-and-shutdown": "Launch and shutdown",
         "deleting-a-person": "Deleting a person",
-        "saving-data": "Saving data"
+        "assignments-2": "Assignments",
+        "viewing-assignments": "Viewing assignments",
+        "edit-grades": "Edit grades",
+        "delete-grades": "Delete grades",
+        "edit-comments": "Edit comments",
+        "delete-comments": "Delete comments",
+        "creating-a-consultation": "Creating a consultation",
+        "deleting-a-consultation": "Deleting a consultation",
+        "adding-a-student-to-a-consultation": "Adding a student to a consultation",
+        "removing-a-student-from-a-consultation": "Removing a student from a consultation",
+        "saving-data": "Saving data",
+        "appendix-instructions-for-manual-testing-2": "Appendix: Instructions for manual testing",
+        "notable-changes": "Notable Changes"
       },
       "headingKeywords": {}
     },

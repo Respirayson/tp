@@ -1,0 +1,30 @@
+@startuml
+
+!include style.puml
+
+start
+:Avenger inputs RemoveFromConsult command;
+
+:Parse command text;
+
+if () then ([Index parameter is valid])
+: Consultation at index is retrieved;
+
+if () then ([Name exist in address book and the consultation])
+:Student matching given
+name removed from the consultation;
+
+else ([else])
+:Show student not found
+error to Avenger;
+endif
+
+else ([else])
+:Show invalid index number
+error to Avenger;
+endif
+
+
+stop
+
+@enduml
