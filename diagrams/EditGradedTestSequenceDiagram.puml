@@ -1,0 +1,49 @@
+@startuml
+!include style.puml
+
+mainframe **sd** execute EditGradedTestCommand
+
+participant "e:EditGradedTestCommand" as EditGradedTestCommand LOGIC_COLOR
+
+participant "model:Model" as Model MODEL_COLOR
+
+participant ":List<Person>" as Persons MODEL_COLOR_T4
+
+
+[-> EditGradedTestCommand : execute()
+activate EditGradedTestCommand
+
+EditGradedTestCommand -> Model : getFilteredPersonList
+activate Model
+
+Model ---> EditGradedTestCommand
+deactivate Model
+
+EditGradedTestCommand -> Persons : get(targetIndex)
+activate Persons
+
+Persons ---> EditGradedTestCommand
+deactivate Persons
+
+EditGradedTestCommand -> EditGradedTestCommand : createEditedGradedTestPerson(personToEdit)
+activate EditGradedTestCommand
+
+EditGradedTestCommand ---> EditGradedTestCommand
+deactivate EditGradedTestCommand
+
+EditGradedTestCommand -> Model : setPerson(target, editedPerson)
+activate Model
+
+Model -> Model : updateFilteredPersonList()
+activate Model
+
+Model ---> Model
+deactivate Model
+
+Model ---> EditGradedTestCommand
+deactivate Model
+
+[<-- EditGradedTestCommand
+deactivate EditGradedTestCommand
+
+@enduml

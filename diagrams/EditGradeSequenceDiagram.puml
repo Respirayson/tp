@@ -1,9 +1,9 @@
 @startuml
 !include style.puml
 
-mainframe **sd** EditCommandExecute
+mainframe **sd** EditGradeCommandExecute
 
-participant "e:EditCommand" as EditCommand LOGIC_COLOR
+participant "command:EditGradeCommand" as EditGradeCommand LOGIC_COLOR
 
 participant "model:Model" as Model MODEL_COLOR
 
@@ -15,28 +15,28 @@ participant "entry:XYZ" as XYZ MODEL_COLOR_T3
 
 
 
-[-> EditCommand : execute()
-activate EditCommand
+[-> EditGradeCommand : execute()
+activate EditGradeCommand
 
-EditCommand -> Model : getFilteredPersonList
+EditGradeCommand -> Model : getFilteredPersonList()
 activate Model
 
-Model ---> EditCommand
+Model ---> EditGradeCommand
 deactivate Model
 
-EditCommand -> Persons : get(targetIndex)
+EditGradeCommand -> Persons : get(targetIndex)
 activate Persons
 
-Persons ---> EditCommand
+Persons ---> EditGradeCommand
 deactivate Persons
 
-EditCommand -> EditCommand : createEditedPerson(personToEdit, editPersonDescriptor)
-activate EditCommand
+EditGradeCommand -> EditGradeCommand : createGradedPerson(personToEdit)
+activate EditGradeCommand
 
-EditCommand ---> EditCommand
-deactivate EditCommand
+EditGradeCommand ---> EditGradeCommand
+deactivate EditGradeCommand
 
-EditCommand -> Model : setPerson(target, editedPerson)
+EditGradeCommand -> Model : setPerson(target, editedPerson)
 activate Model
 
 Model -> List : setStudent(target, editedPerson)
@@ -73,10 +73,10 @@ activate Model
 Model ---> Model
 deactivate Model
 
-Model ---> EditCommand
+Model ---> EditGradeCommand
 deactivate Model
 
-[<-- EditCommand
-deactivate EditCommand
+[<-- EditGradeCommand
+deactivate EditGradeCommand
 
 @enduml

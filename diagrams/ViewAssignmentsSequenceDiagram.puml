@@ -1,0 +1,30 @@
+@startuml
+!include style.puml
+
+mainframe **sd** ViewAssignmentsCommandExecute
+
+participant "command:ViewAssignmentsCommand" as ViewAssignmentsCommand LOGIC_COLOR
+
+participant "model:Model" as Model MODEL_COLOR
+
+participant ":List<Person>" as Persons MODEL_COLOR_T4
+
+[-> ViewAssignmentsCommand : execute()
+activate ViewAssignmentsCommand
+
+ViewAssignmentsCommand -> Model : getFilteredPersonList()
+activate Model
+
+Model ---> ViewAssignmentsCommand
+deactivate Model
+
+ViewAssignmentsCommand -> Persons : get(targetIndex)
+activate Persons
+
+Persons ---> ViewAssignmentsCommand
+deactivate Persons
+
+[<-- ViewAssignmentsCommand
+deactivate ViewAssignmentsCommand
+
+@enduml

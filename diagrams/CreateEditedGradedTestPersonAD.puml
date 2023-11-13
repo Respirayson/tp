@@ -1,0 +1,47 @@
+@startuml
+!include style.puml
+
+start
+if () then ([existingGradedTest is null])
+    :Create new GradedTest;
+    note left
+      The new GradedTest
+      has default values of `-`
+    end note
+else ([else])
+    :Use existingGradedTest;
+endif
+
+if () then ([ra1 is provided])
+    :Use provided RA1;
+else ([else])
+    :Retain existing RA1;
+endif
+if () then ([ra2 is provided])
+    :Use provided RA2;
+else ([else])
+    :Retain existing RA2;
+endif
+if () then ([midTerms is provided])
+    :Use provided MidTerms;
+else ([else])
+    :Retain existing MidTerms;
+endif
+if () then ([finals is provided])
+    :Use provided Finals;
+else ([else])
+    :Retain existing Finals;
+endif
+if () then ([pe is provided])
+    :Use provided PracticalExam;
+else ([else])
+    :Retain existing PracticalExam;
+endif
+
+:Create editedGradedTest;
+:Remove existingGradedTest from gradedTest;
+:Add editedGradedTest to gradedTest;
+
+:Return new Person;
+stop
+@enduml
