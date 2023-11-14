@@ -23,6 +23,8 @@ class GradedTest {
     + getGradedTests(): String
     + isValidGradeTestName(test: String): boolean
     + isSameGradedTest(otherGradedTest: GradedTest): boolean
+    + parseGradedTest(gradedTest: String): String[]
+    + validateField(fieldName: String, fieldValue: String): String
 }
 
 class ReadingAssessment1 {

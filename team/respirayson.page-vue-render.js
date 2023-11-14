@@ -41,6 +41,6 @@ with(this){return _c('li',[_c('p',[_c('strong',[_v("Tools")]),_v(":")]),_v(" "),
 with(this){return _c('li',[_c('p',[_c('strong',[_v("Contributions beyond the project team")]),_v(":")]),_v(" "),_c('ul',[_c('li',[_v("Helped to identify 13 bugs during the practical dry run, which improved the quality of their product. PED-Repo available "),_c('a',{attrs:{"href":"https://github.com/Respirayson/ped"}},[_v("here")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Tue, 14 Nov 2023, 12:09:39 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Tue, 14 Nov 2023, 20:24:02 GMT+8]")])])])}
 }];
   
